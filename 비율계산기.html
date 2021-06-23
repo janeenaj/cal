@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비율계산기</title>
+    <style>
+        *{margin: 0 auto; padding: 0;}
+        body{padding: 10%;}
+        h1{color: rgb(193, 139, 218); font-size: 25px;padding: 10px;border-bottom:1px solid darkviolet;}
+        p{font-size: 18px; line-height: 50px;}
+        input{outline-style: none; border: 0;background-color: rgb(184, 247, 247); width: 100px; font-size: 20px;color: darkmagenta; text-align: center;}
+        a{text-decoration: none; color: #fff; background-color: blueviolet;
+        padding: 10px; border-radius: 50%; margin-left: 20px;} 
+        p:last-of-type {padding:0 50px; background-color: rgb(240, 220, 253); color: darkmagenta; display: inline-block;}
+        p .per {color: crimson; padding-right: 10px;}
+    </style>
+    <script>
+        window.onload = function(){
+            let bu = document.querySelector('p .bu');
+            let a = document.querySelector('p .a');
+            let b = document.querySelector('p .b');
+            let per = document.querySelector('p .per');
+
+            bu.addEventListener('click',perf);
+
+            function perf(){
+                let input1 = Number(a.value);
+                let input2 = Number(b.value);
+                per.innerHTML = (input2/input1*100);
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>비율 계산기</h1>
+    <p><input type="text" class="a">의<input type="text" class="b">은?<a href="#" class="bu">확인</a></p>
+    <p><span class="per"></span>%</p>
+</body>
+</html>
